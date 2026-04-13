@@ -12,7 +12,7 @@ mkdir -p "$REPORT_DIR"
 banner() {
   echo -e "${CYAN}${BOLD}"
   echo "  =================================="
-  echo "   SECTOOL — Security Audit Toolkit"
+  echo "   SECTOOL - Security Audit Toolkit"
   echo "  =================================="
   echo -e "${RESET}"
 }
@@ -23,6 +23,7 @@ menu() {
   echo -e "  ${GREEN}[2]${RESET}  Hardening"
   echo -e "  ${GREEN}[3]${RESET}  Report"
   echo -e "  ${GREEN}[4]${RESET}  Full Run"
+  echo -e "  ${GREEN}[5]${RESET}  Monitor"
   echo -e "  ${RED}[0]${RESET}  Exit\n"
   read -rp "  Your choice: " choice
 
@@ -35,6 +36,7 @@ menu() {
       source "$MODULES_DIR/hardening.sh" && run_hardening
       source "$MODULES_DIR/report.sh"    && run_report
       ;;
+    5) source "$MODULES_DIR/monitor.sh"  && run_monitor ;;
     0) echo -e "\n  ${CYAN}Bye! Stay secure.${RESET}\n" ; exit 0 ;;
     *) echo -e "  ${RED}Invalid choice.${RESET}" ; menu ;;
   esac
