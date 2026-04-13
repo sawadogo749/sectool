@@ -7,16 +7,26 @@
 
 > CLI Bash qui orchestre nmap, lynis, rkhunter, fail2ban et ufw dans une interface unifiée pour auditer, durcir et surveiller un système Linux.
 
-## Installation
+## Installation rapide
 
-git clone git@github.com:sawadogo749/sectool.git
-cd sectool
-chmod +x sectool.sh modules/*.sh
-./sectool.sh
+```bash
+git clone https://github.com/sawadogo749/sectool.git && cd sectool && chmod +x sectool.sh modules/*.sh && ./sectool.sh
+```
 
 ## Modules
 
-- Audit — ports ouverts, logins, SUID
-- Hardening — firewall, SSH, kernel
-- Report — rapport complet horodaté
-- Monitor — surveillance live (bientôt)
+- [1] Audit     — ports ouverts, logins échoués, SUID
+- [2] Hardening — firewall, SSH, kernel flags
+- [3] Report    — rapport complet horodaté
+- [4] Full Run  — tout en une fois
+- [5] Monitor   — surveillance live CPU, mémoire, logs
+
+## Dépendances optionnelles
+
+```bash
+sudo apt install nmap lynis rkhunter fail2ban ufw
+```
+
+## License
+
+MIT
